@@ -53,12 +53,19 @@ public class StartwithofficialdocumentationApplication {
         return new Receiver();
     }
 
+    /**
+     * To send a message, you also need a Redis template
+     * Here, it is a bean configured as a StringRedisTemplate , an implementation of RedisTemplate
+     * that is focused on the common use of Redis, where both keys and values are String instances
+     * */
     @Bean
     StringRedisTemplate template(RedisConnectionFactory connectionFactory) {
         return new StringRedisTemplate(connectionFactory);
     }
 
     public static void main(String[] args) throws InterruptedException{
+
+        //The main() method kicks off everything by creating a Spring application context
         ApplicationContext ctx = SpringApplication
                 .run(StartwithofficialdocumentationApplication.class, args);
 
