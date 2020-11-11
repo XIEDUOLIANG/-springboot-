@@ -26,16 +26,16 @@ public class StartwithofficialdocumentationApplication {
         StringRedisTemplate template = ctx.getBean(StringRedisTemplate.class);
         Receiver receiver = ctx.getBean(Receiver.class);
 
-        for (int i = 0; i < 1000; i++) {
+        /*for (int i = 0; i < 1000; i++) {
             new Task(template).start();
         }
         Thread.sleep(500L);
         System.out.println(receiver.getCount());
         System.out.println(receiver.getCounter2());
-        System.out.println(Task.num);
+        System.out.println(Task.num);*/
     }
 
-    static class Task extends Thread{
+    /*static class Task extends Thread{
 
         private StringRedisTemplate stringRedisTemplate;
         private static Integer num = 0;
@@ -50,6 +50,6 @@ public class StartwithofficialdocumentationApplication {
             stringRedisTemplate.convertAndSend("chat","hello from redis");
             num = num + 1;
         }
-    }
+    }*/
 
 }
