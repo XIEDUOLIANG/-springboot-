@@ -17,6 +17,8 @@ import org.springframework.data.redis.listener.adapter.MessageListenerAdapter;
 @Slf4j
 public class StartwithofficialdocumentationApplication {
 
+    public static Integer countNum = 0;
+
     public static void main(String[] args) throws InterruptedException{
 
         //The main() method kicks off everything by creating a Spring application context

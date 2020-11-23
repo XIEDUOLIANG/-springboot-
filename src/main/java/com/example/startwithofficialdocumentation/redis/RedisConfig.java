@@ -3,6 +3,7 @@ package com.example.startwithofficialdocumentation.redis;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.context.annotation.Bean;
 import org.springframework.data.redis.connection.RedisConnectionFactory;
+import org.springframework.data.redis.connection.lettuce.LettuceConnectionFactory;
 import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.data.redis.listener.PatternTopic;
 import org.springframework.data.redis.listener.RedisMessageListenerContainer;
@@ -22,7 +23,7 @@ public class RedisConfig {
      * are all you need to listen for messages
      * */
     @Bean
-    RedisMessageListenerContainer container(RedisConnectionFactory connectionFactory,
+    RedisMessageListenerContainer container(LettuceConnectionFactory connectionFactory,
                                             MessageListenerAdapter adapter) {
         RedisMessageListenerContainer container = new RedisMessageListenerContainer();
         container.setConnectionFactory(connectionFactory);
@@ -59,7 +60,7 @@ public class RedisConfig {
      * that is focused on the common use of Redis, where both keys and values are String instances
      * */
     @Bean
-    StringRedisTemplate template(RedisConnectionFactory connectionFactory) {
+    StringRedisTemplate template(LettuceConnectionFactory connectionFactory) {
         return new StringRedisTemplate(connectionFactory);
     }
 }
