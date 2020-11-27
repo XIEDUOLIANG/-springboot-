@@ -22,4 +22,11 @@ public class TestSingletonController {
         System.out.println(countNum);
         return String.valueOf(countNum);
     }
+
+    @RequestMapping(value = "/testexception",method = RequestMethod.POST)
+    public int testex(@RequestParam("num") Integer num) {
+        int a = 1;
+        int b = 0;
+        return a/b;
+    }
 }

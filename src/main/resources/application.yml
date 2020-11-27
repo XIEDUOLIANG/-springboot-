@@ -7,4 +7,13 @@ server:
 
 spring:
   datasource:
-    initialization-mode: embedded #是否在项目初始化的时候启动数据源初始化 always embedded never
+    url: jdbc:mysql://localhost:3306/test?useUnicode=true&characterEncoding=UTF-8
+    username: root
+    password: .xdl9257xdl.
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    dbcp2:
+      min-idle: 5         #数据库连接池的最小维持连接数
+      initial-size: 5     #初始化提供的连接数
+      max-total: 5          #最大的连接数
+      max-wait-millis: 200        #等待连接获取的最大超时时间
+  #initialization-mode: embedded #是否在项目初始化的时候启动数据源初始化 always embedded never

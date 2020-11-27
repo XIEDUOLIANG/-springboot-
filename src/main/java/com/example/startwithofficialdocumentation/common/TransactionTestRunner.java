@@ -24,7 +24,7 @@ public class TransactionTestRunner implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws Exception {
-        bookingService.book("Alice", "Bob", "Carol");
+        /*bookingService.book("Alice", "Bob", "Carol");
         Assert.isTrue(bookingService.findAllBookings().size() == 3,
                 "First booking should work with no problem");
         log.info("Alice, Bob and Carol have been booked");
@@ -58,6 +58,6 @@ public class TransactionTestRunner implements CommandLineRunner {
         log.info("You shouldn't see Buddy or null. null violated DB constraints, and " +
                 "Buddy was rolled back in the same TX");
         Assert.isTrue(bookingService.findAllBookings().size() == 3,
-                "'null' should have triggered a rollback");
+                "'null' should have triggered a rollback");*/
     }
 }
